@@ -65,10 +65,9 @@ const selector = (opcion) => {
         break; 
   default:
       alert('Seleccione alguna opcion');
-      while( opcion !== 1 && opcion !== 2 && opcion !== 3  && opcion !== 0 ){
-       opcion =  parsearEntero('opcion no valida , ingrese otra')
+      while(opcion !== 1 && opcion !== 2 && opcion !== 3  && opcion !== 0 ){
+       opcion =  parsearEntero('opcion no valida , ingrese otra');
       }
-      break;
 
 }
 
