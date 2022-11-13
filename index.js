@@ -63,14 +63,17 @@ const selector = (opcion) => {
     case 0:
          usuarioComida();
         break; 
+     case 5:
+      seleccionar = 5;
+     break;    
   default:
       alert('Seleccione alguna opcion');
-      while(opcion !== 1 && opcion !== 2 && opcion !== 3  && opcion !== 0 ){
+      while(opcion !== 1 && opcion !== 2 && opcion !== 3  && opcion !== 0 && opcion !== 5 ){
        opcion =  parsearEntero('opcion no valida , ingrese otra');
       }
 
 }
-
+  opcion = prompt('ingrese otra opcion');
 }
 
 
@@ -81,22 +84,24 @@ const bienvenida = "Bienvenido, accede al menu del dia de hoy";
 alert(bienvenida);
 
 
-const opciones = "1. Pasta \n 2. Arroz \n 3. Carne \n 0. Quiero otro menu";
+const opciones = "1. Pasta \n 2. Arroz \n 3. Carne \n 0. Quiero otro menu \n 5-Salir";
 
 let seleccionar = parsearEntero(opciones);
 
 
- const condiciones = () => (seleccionar === 1 || seleccionar === 2 || seleccionar ===3 || seleccionar ===0);
+ const condiciones = () => (seleccionar === 1 || seleccionar === 2 || seleccionar ===3 || seleccionar ===0 || seleccionar ===5);
 
  while(!condiciones()){
 
     seleccionar = parsearEntero(opciones);
     condiciones();
     console.log(seleccionar);
-
-
  }
 
-selector(seleccionar);
+ while(seleccionar !== 5){
+  selector(seleccionar);
+  seleccionar = parsearEntero(opciones);
+ }
+
 
 
